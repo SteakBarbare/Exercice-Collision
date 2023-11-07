@@ -29,13 +29,13 @@ function moveMario(e) {
       break;
   }
 }
-
+// La fonction prend en compte deux éléments, une vitesse horizontale et une vitesse verticale
 function isCollision(element1, element2, xSpeed, ySpeed) {
   let marioBounding = element1.getBoundingClientRect();
   let luigiBounding = element2.getBoundingClientRect();
 
-  // On check si Mario + sa taille dépasse l'origine en x de Luigi
-  // On check si l'origine de Mario dépasse Luigi + sa taille
+  // On check si Mario + sa taille + son mouvement dépasse l'origine en x de Luigi
+  // On check si l'origine de Mario + son mouvement dépasse Luigi + sa taille
   // Same pour les y
   if (
     marioBounding.x + marioBounding.width + xSpeed >= luigiBounding.x &&
